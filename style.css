@@ -183,7 +183,7 @@ input:checked ~ .bubble::after{
   transform: scale(1.01);
 }
 
-/* Todo List and Items */
+  /* Todo List and Items */
 .todo-list .list {
   margin: 1rem 0;
 }
