@@ -245,3 +245,9 @@ input:checked ~ .bubble::after{
 .todo-item .actions .delete:hover {
   opacity: 0.9;
 }
+
+/* Cross task that is done */
+.todo-item.done .todo-content input {
+  text-decoration: line-through;
+  color: var(--grey);
+}
