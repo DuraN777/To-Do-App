@@ -43,6 +43,7 @@ section {
 }
 
 h2 {
+  text-transform: uppercase;
   font-size: 1.4rem;
   font-weight: 400;
   margin-bottom: 0.5rem;
@@ -54,6 +55,7 @@ h3 {
   font-weight: 700;
 }
 
+/* Greeting & title */
 .greeting .title {
   display: flex;
 }
@@ -64,13 +66,14 @@ h3 {
   min-width: 0; /* so doesnt mess up title on window shrink*/
 }
 
-.greting .title,
+.greeting .title,
 .greeting .title input {
   color: var(--dark);
   font-size: 1.5rem;
   font-weight: 700;
 }
 
+/* Todo Input */
 .create-todo input[type="text"] {
   display: block;
   width: 100%;
@@ -80,9 +83,10 @@ h3 {
   color: var(--dark);
   border-radius: 0.75rem;
   box-shadow: var(--shadow);
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
 }
 
+/* Todo Options/ Pick a Category */
 .create-todo .options {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -102,7 +106,7 @@ h3 {
   cursor: pointer;
 }
 
-  /* Custom radio and checkbox */
+    /* Custom radio and checkbox */
 /* Remove default ones */
 input[type="radio"], 
 input[type="checkbox"] {
@@ -151,4 +155,14 @@ input:checked ~ .bubble::after{
   width: 10px;
   height: 10px;
   opacity: 1;
+}
+
+/* Text inside options */ 
+.create-todo .options label div {
+  font-size: 1.125rem;
+  margin-top: 0.725rem;
+}
+
+.create-todo h3 {
+  margin-bottom: 0.5rem;
 }
