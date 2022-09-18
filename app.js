@@ -90,5 +90,28 @@ function displayTodos() {
 
     todoList.appendChild(todoItem);
 
+    deleteBtn.addEventListener('click', (e) => {
+			todos = todos.filter(t => t != todo);
+			localStorage.setItem('todos', JSON.stringify(todos));
+			DisplayTodos();
+		})
+
   });
 }
+
+
+  // Todo-Item HTML
+//  <div class="todo-item">
+//   <label>
+//     <input type="checkbox" />
+//     <span class="bubble business"></span>
+//   </label>
+
+//   <div class="todo-content">
+//     <input type="text" value="Make it rain" readonly>
+//   </div>
+//   <div class="actions">
+//     <button class="edit">Edit</button>
+//     <button class="delete">Delete</button>
+//   </div>
+// </div>
