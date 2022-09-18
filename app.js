@@ -93,7 +93,7 @@ function displayTodos() {
     deleteBtn.addEventListener('click', (e) => {
 			todos = todos.filter(t => t != todo);
 			localStorage.setItem('todos', JSON.stringify(todos));
-			DisplayTodos();
+			displayTodos();
 		})
 
   });
