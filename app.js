@@ -28,13 +28,13 @@ window.addEventListener('load', () => {
 
     todos.push(todo);
     localStorage.setItem('todos', JSON.stringify(todos));
+    // Reset the form
     e.target.reset();
 
     displayTodos();
   })
 
   displayTodos();
-
 })
 
 function displayTodos() {
@@ -56,8 +56,8 @@ function displayTodos() {
 
     input.type = 'checkbox';
     // to check if todo is checked
-    // todo is our object and done is boolean property in it.
-    input.checked = todo.done;
+    // 'todo' is our object and 'done' is boolean property in it.
+    input.checked = todo.done; // true/false
     span.classList.add('bubble');
 
     // Check for category of todo
@@ -73,7 +73,7 @@ function displayTodos() {
     edit.classList.add('edit');
     deleteBtn.classList.add('delete');
 
-    // INput element representing todo task
+    // Iput element representing todo task
     content.innerHTML = `<input type="text" value="${todo.content}" readonly>`;
     edit.innerHTML = 'Edit';
     deleteBtn.innerHTML = 'Delete';
@@ -89,6 +89,22 @@ function displayTodos() {
     todoItem.appendChild(actions);
 
     todoList.appendChild(todoItem);
+
+    // Check if todo is done and cross it if true
+    if (todo.done) {
+      todoItem.classList.add('done');
+    }
+
+    input.addEventListener('change', (e) => {
+      // chek the boolean
+      todo.done = e.target.checked;
+      //save change
+      localStorage.setItem('todos', JSON.stringify(todos));
+      // toggle style
+      todoItem.classList.toggle('done');
+      
+      displayTodos();
+    })
 
     deleteBtn.addEventListener('click', (e) => {
 			todos = todos.filter(t => t != todo);
