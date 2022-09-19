@@ -13,9 +13,15 @@ window.addEventListener('load', () => {
     localStorage.setItem('username', e.target.value);
   })
 
+  const alert = document.querySelector('.alert');
+  console.log(alert);
   newTodoForm.addEventListener('submit', e => {
     e.preventDefault();
-
+    const inputValue = document.querySelector('#content')
+    if(inputValue.value == null || inputValue.value == "") {
+      alert.classList.add('show');
+      return false;
+    } else alert.classList.remove('show');
     // Create todo object
     const todo = {
       // name pertains to name of element in new-todo-form

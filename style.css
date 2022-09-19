@@ -21,6 +21,19 @@
   font-family: 'Poppins',sans-serif;
 }
 
+.alert {
+  height: 0;
+  overflow: hidden;
+  opacity: 0;
+  color: var(--danger);
+  transition: opacity 1s ease-in-out;
+}
+
+.alert.show {
+  opacity: 1;
+  height: auto;
+}
+
 /* Style input of type='text' & type="submit" and button 
 to not have borders/outlines/appearance */
 button,
