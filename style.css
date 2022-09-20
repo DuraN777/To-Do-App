@@ -21,18 +21,6 @@
   font-family: 'Poppins',sans-serif;
 }
 
-.alert {
-  height: 0;
-  overflow: hidden;
-  opacity: 0;
-  color: var(--danger);
-  transition: opacity 1s ease-in-out;
-}
-
-.alert.show {
-  opacity: 1;
-  height: auto;
-}
 
 /* Style input of type='text' & type="submit" and button 
 to not have borders/outlines/appearance */
@@ -98,6 +86,8 @@ h3 {
   box-shadow: var(--shadow);
   margin-bottom: 2rem;
 }
+
+/*  */
 
 /* Create-todo subtitles */
 .create-todo h3 {
@@ -194,6 +184,20 @@ input:checked ~ .bubble::after{
 
 .create-todo input[type="submit"]:hover {
   transform: scale(1.01);
+}
+
+/* Form control */
+.alert {
+  height: 0;
+  overflow: hidden;
+  opacity: 0;
+  color: var(--danger);
+  transition: opacity 1s ease-in-out;
+}
+
+.alert.show {
+  opacity: 1;
+  height: auto;
 }
 
   /* Todo List and Items */
