@@ -18,7 +18,7 @@ window.addEventListener('load', () => {
   newTodoForm.addEventListener('submit', e => {
     e.preventDefault();
     const inputValue = document.querySelector('#content')
-    
+
     if(inputValue.value == null || inputValue.value == "") {
       alert.classList.add('show');
       return false;
@@ -114,12 +114,28 @@ function displayTodos() {
       displayTodos();
     })
 
-    deleteBtn.addEventListener('click', (e) => {
+    // Delete btn
+    deleteBtn.addEventListener('click', e => {
 			todos = todos.filter(t => t != todo);
 			localStorage.setItem('todos', JSON.stringify(todos));
 			displayTodos();
 		})
 
+    //Edit btn
+    edit.addEventListener('click', () => {
+      const input = content.querySelector('input');
+      input.removeAttribute('readonly');
+      input.focus();
+      // Blur event: https://developer.mozilla.org/en-US/docs/Web/API/Element/blur_event
+      input.addEventListener('blur', e => {
+        //Element.setAttribute(qualifiedName: string, value: string)
+        input.setAttribute('readonly', true);
+        // set content to new text
+        todo.content = e.target.value;
+        localStorage.setItem('todos', JSON.stringify(todos));
+        displayTodos();
+      })
+    })
   });
 }
 
